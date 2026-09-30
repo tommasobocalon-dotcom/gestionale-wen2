@@ -358,7 +358,7 @@ Il gestionale contiene dati personali dei clienti ed è raggiungibile da interne
 
 #### Contesto e motivazione
 
-V&N esegue manutenzioni, riparazioni e controlli fumi. Oggi non c'è traccia strutturata di chi è intervenuto e quando: se un cliente richiama per un guasto, il tecnico non sa se l'impianto è stato visto di recente né da quale collega. Lo storico degli interventi permette di:
+W&N esegue manutenzioni, riparazioni e controlli fumi. Oggi non c'è traccia strutturata di chi è intervenuto e quando: se un cliente richiama per un guasto, il tecnico non sa se l'impianto è stato visto di recente né da quale collega. Lo storico degli interventi permette di:
 
 - rispondere al cliente sapendo quando è stata fatta l'ultima manutenzione;
 - risalire al tecnico che ha eseguito un lavoro, in caso di contestazione o di dubbio tecnico;
