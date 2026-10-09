@@ -416,3 +416,33 @@ Requisiti che nessuno ha chiesto esplicitamente durante le interviste perché da
 | Direttore W&N          | "Scrivo il cognome come mi viene, a volte minuscolo, a volte senza accento" | La ricerca ignora maiuscole, minuscole e accenti; per il telefono ignora spazi, trattini e prefisso +39 (US-01)                                                                 |
 | Tecnico operativo      | "L'intervento di stamattina alle 9 deve risultare alle 9"                   | Date e ore sono salvate e mostrate nel fuso orario Europe/Rome, con gestione dell'ora legale, in formato gg/mm/aaaa e 24 ore (US-07)                                            |
 | Direttore W&N          | "Non voglio perdere un cliente per un click sbagliato"                      | Un'eliminazione chiede sempre una conferma esplicita e, grazie al soft delete, non cancella lo storico interventi e i documenti collegati (US-05)                               |
+
+## Assunzioni, vincoli e dipendenze
+
+### Assunzioni
+
+| ID     | Assunzione                                                                         | Cosa succede se è falsa                                                                                                                   |
+| ------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| ASS-01 | W&N accetta di sostenere il costo di un VPS (~5 €/mese)                            | Il deploy con Docker non è possibile: serve un hosting che supporti Node.js senza container, perdendo la parità tra sviluppo e produzione |
+| ASS-02 | Gli utenti dispongono di un PC con browser Chrome o Firefox aggiornati             | Necessità di gestire browser legacy o di fornire un dispositivo adeguato                                                                  |
+| ASS-03 | Il volume dei clienti non supera 5 000 record nel primo anno di utilizzo           | Le scelte di indicizzazione del database vanno riviste; le prestazioni potrebbero degradare                                               |
+| ASS-04 | Non è richiesta un'integrazione con software di contabilità o gestionali esistenti | Va aggiunta una fase di analisi dell'integrazione e probabilmente un'API esterna                                                          |
+
+### Vincoli
+
+| ID     | Vincolo                                                                                                | Da dove viene                                                                                      |
+| ------ | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| VIN-01 | Solo librerie e strumenti open source; costo dell'infrastruttura non oltre 10 €/mese                   | Progetto accademico senza budget per licenze; il costo del server è a carico di W&N                |
+| VIN-02 | Applicazione eseguita in container Docker, orchestrati con Docker Compose, in sviluppo e in produzione | Scelta del team: stesso ambiente su ogni PC e sul server, setup e deploy ripetibili con un comando |
+| VIN-03 | Consegna entro maggio 2027                                                                             | Scadenza del corso                                                                                 |
+| VIN-04 | Dati dei clienti ospitati in un datacenter nell'Unione Europea                                         | GDPR (NFR-08)                                                                                      |
+
+### Dipendenze
+
+| ID     | Dipendenza                                                                                | Serve entro | Chi se ne occupa                                |
+| ------ | ----------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------- |
+| DIP-01 | Acquisto del VPS da parte di W&N e accesso SSH per il deploy                              | 15/01/2027  | Bocalon Tommaso (coordina con il direttore W&N) |
+| DIP-02 | Raccolta e consegna dei dati clienti esistenti (Excel o carta) per la migrazione iniziale | 15/02/2027  | W&N Assistenza Caldaie                          |
+| DIP-03 | Dominio o sottodominio dedicato all'applicazione                                          | 15/04/2027  | Bolea Alessandro                                |
+
+---
